@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'eons_accounts',
+    'pages',
 ]
 
 MIDDLEWARE = [

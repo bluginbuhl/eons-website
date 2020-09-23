@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.account',
 
     # Local apps
+    'eons_accounts',
 ]
 
 MIDDLEWARE = [
@@ -92,6 +93,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': env.db()
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -154,7 +156,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Django Allauth
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 
-# AUTH_USER_MODEL = 'accounts.EonsUser'
+AUTH_USER_MODEL = 'eons_accounts.EonsUser'
 
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT = 'home'
@@ -163,7 +165,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-DEFAULT_FROM_EMAIL = 'admin@djangobooks.com'
+DEFAULT_FROM_EMAIL = 'admin@eons.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True

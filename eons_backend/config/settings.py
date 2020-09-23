@@ -168,6 +168,7 @@ AUTHENTICATION_BACKENDS = (
 )
 DEFAULT_FROM_EMAIL = 'admin@eons.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_FORMS = {'signup': 'eons_accounts.forms.EonsUserCreationForm'}
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'

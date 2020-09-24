@@ -1,0 +1,18 @@
+body {
+  margin-top: 5rem;
+}
+
+/* Navbar styles */
+
+#brandLogo {
+  height: 30px;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  color: #cbd5db;
+}
+
+.nav-link:hover {
+  color: #06b39a;
+}

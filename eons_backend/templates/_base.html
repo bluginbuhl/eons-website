@@ -31,8 +31,8 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarToggle">
           <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
-          <a href="#" class="nav-item nav-link">About</a>
-          <a href="#" class="nav-item nav-link">Data</a>
+          <a class="nav-item nav-link" href="#">About</a>
+          <a class="nav-item nav-link" href="#">Data</a>
         </div>
         <div class="navbar-nav">
           {% if user.is_authenticated %}
@@ -50,23 +50,24 @@
                 </div>
             </li>
           {% else %}
-            <a href="{% url 'account_login' %}" class="p-2 text-light nav-item nav-link">Log In</a>
-            <a href="{% url 'account_signup' %}" class="p-2 text-light nav-item nav-link">Register</a>
+            <a href="{% url 'account_login' %}" class="nav-item nav-link">Log In</a>
+            <a href="{% url 'account_signup' %}" class="av-item nav-link">Register</a>
           {% endif %}
         </div>
       </div>
     </nav>
   </header>
 
-  <div class="container">
     {% block content %}
     {% endblock content %}
-  </div>
 
   <footer class="page-footer position-fixed">
     <div class="footer-copyright text-center py-3 fixed-bottom">
       © 2020 Copyright: 
       <a href="http://darkskypartners.com/" alt="Dark Sky Partners LLC">Dark Sky Partners LLC</a>
+      <div class="text-center">
+        <small>All Rights Reserved</small>
+      </div>
     </div>
   </footer>
   

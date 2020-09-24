@@ -1,6 +1,14 @@
-body {
-  margin-top: 5rem;
+:root {
+  --eonsteal: #06b39a;
+  --eonsgrey: #cbd5db;
+  --fg2: #d5c4a1;
 }
+
+body {
+  /* margin-top: 5rem; */
+  overflow: hidden;
+}
+
 
 /* Navbar styles */
 
@@ -9,10 +17,33 @@ body {
 }
 
 .nav-link {
-  font-size: 1.1rem;
-  color: #cbd5db;
+  font-size: 1rem;
+  color: var(--eonsgrey);
 }
 
 .nav-link:hover {
-  color: #06b39a;
+  color: var(--eonsteal);
+}
+
+
+/* Form styles */
+
+.form-control {
+  border-radius: 0px;
+  height: calc(1.5em + 1rem + 2px)
+}
+
+
+/* Footer styles */
+
+footer {
+  color: var(--fg2);
+}
+
+
+/* Animation placeholder */
+
+canvas {
+  width: 100vw;
+  height: 100vh;
 }

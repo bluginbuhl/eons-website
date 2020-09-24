@@ -11,6 +11,10 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet"> 
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="{% static 'images/branding/favicon.png' %}" type="image/png">
 
   <title>EONS - {% block title %}{% endblock title %}</title>
@@ -58,15 +62,19 @@
     </nav>
   </header>
 
+  <div class="content-block">
     {% block content %}
     {% endblock content %}
+  </div>
 
   <footer class="page-footer position-fixed">
-    <div class="footer-copyright text-center py-3 fixed-bottom">
-      © 2020 Copyright: 
-      <a href="http://darkskypartners.com/" alt="Dark Sky Partners LLC">Dark Sky Partners LLC</a>
-      <div class="text-center">
-        <small>All Rights Reserved</small>
+    <div class="footer-content">
+      <div class="footer-copyright text-center py-3 fixed-bottom">
+        © 2020 Copyright: 
+        <a href="http://darkskypartners.com/" alt="Dark Sky Partners LLC">Dark Sky Partners LLC</a>
+        <div class="text-center">
+          <small>All Rights Reserved</small>
+        </div>
       </div>
     </div>
   </footer>

@@ -1,11 +1,15 @@
 :root {
   --eonsteal: #06b39a;
+  --eonsdarkteal: #004040;
   --eonsgrey: #cbd5db;
+  --eonsyellow: #fabd2f;
   --fg2: #d5c4a1;
+  --transparent1: rgba(0, 0, 0, 0.1);
+  --transparent2: rgba(0, 0, 0, 0.2);
+  --transparent5: rgba(0, 0, 0, 0.5);
 }
 
 body {
-  /* margin-top: 5rem; */
   overflow: hidden;
 }
 
@@ -16,7 +20,12 @@ body {
   height: 30px;
 }
 
+.navbar {
+  background-color: var(--transparent5) !important;
+}
+
 .nav-link {
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
   color: var(--eonsgrey);
 }
@@ -25,12 +34,18 @@ body {
   color: var(--eonsteal);
 }
 
+/* Content block */
+
+.content-block {
+  padding-top: 5rem;
+}
+
 
 /* Form styles */
 
 .form-control {
   border-radius: 0px;
-  height: calc(1.5em + 1rem + 2px)
+  height: calc(1.5em + 1rem + 2px);
 }
 
 
@@ -40,10 +55,28 @@ footer {
   color: var(--fg2);
 }
 
+.footer-copyright {
+  background-color: var(--transparent2)
+}
+
 
 /* Animation placeholder */
 
 canvas {
+  position: absolute;
+  top: -5rem;
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
+}
+
+#comingSoon {
+  margin-top: 30vh;
+}
+
+#comingSoon h2 {
+  font-size: 5rem;
+  color: var(--eonsyellow);
+  text-transform: uppercase;
+  font-family: 'IBM Plex Mono', monospace;
+  text-shadow: 0 0 5px #fff;
 }

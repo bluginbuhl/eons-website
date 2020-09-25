@@ -26,3 +26,6 @@ class EonsUserAdmin(UserAdmin):
 
 
 admin.site.register(EonsUser, EonsUserAdmin)
+
+admin.site.site_title = "EONS - Admin"
+admin.site.site_header = "EONS Administration"

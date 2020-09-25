@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
   <!-- Custom Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="{% static 'images/branding/favicon.png' %}" type="image/png">
@@ -42,10 +43,10 @@
         <div class="navbar-nav">
           {% if user.is_authenticated %}
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" href="#">{{ user.email }}</a>
+              <a class="nav-link dropdown-toggle account-link" id="navbarDropdown" role="button" data-toggle="dropdown" href="#">{{ user.email }}</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:250px">
                   <span class="nav-item ml-2">Signed in as</span>
-                  <div><small><strong class="ml-2">{{ user.email }}</strong></small></div>
+                  <div><small><strong class="ml-2 yellow">{{ user.email }}</strong></small></div>
                   <div class="dropdown-divider"></div>
                   {% if user.is_staff %}
                     <a class="nav-link" href="{% url 'admin:index' %}">Admin dashboard</a>

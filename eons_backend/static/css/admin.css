@@ -1,0 +1,19 @@
+:root {
+  --eonsteal: #06b39a;
+  --eonsdarkteal: #004040;
+  --eonsgrey: #cbd5db;
+  --eonsyellow: #fabd2f;
+  --fg2: #d5c4a1;
+  --transparent1: rgba(0, 0, 0, 0.1);
+  --transparent2: rgba(0, 0, 0, 0.2);
+  --transparent5: rgba(0, 0, 0, 0.5);
+  --white: #ffffff;
+}
+
+#header {
+  background-color: var(--eonsdarkteal);
+}
+
+.module caption {
+  background-color: var(--eonsdarkteal);
+}

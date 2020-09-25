@@ -1,6 +1,7 @@
 :root {
   --eonsteal: #06b39a;
   --eonsdarkteal: #004040;
+  --eonsbrightteal: #00f0f0;
   --eonsgrey: #cbd5db;
   --eonsyellow: #fabd2f;
   --fg2: #d5c4a1;
@@ -12,6 +13,12 @@
 
 body {
   overflow: hidden;
+}
+
+/* Custom text colors */
+
+.yellow {
+  color: var(--eonsyellow);
 }
 
 
@@ -32,8 +39,28 @@ body {
 }
 
 .nav-link:hover {
-  color: var(--eonsteal);
+  color: var(--eonsbrightteal);
+  text-decoration: underline;
 }
+
+.account-link {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.account-link:hover {
+  text-decoration: none !important;
+}
+
+.dropdown .nav-link {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+}
+
+.dropdown .nav-link:hover {
+  text-decoration: none !important;
+  color: var(--eonsteal) !important;
+}
+
 
 /* Content block */
 

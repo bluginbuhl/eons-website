@@ -1,5 +1,5 @@
 void function (canvas) {
-    var grdColors = ["#000000", "#111111"];
+    var grdColors = ["#000000", "#002020"];
     var dotsColor="teal";
     var dotsAmount = 80;
     var bigDotsAmount = 40;

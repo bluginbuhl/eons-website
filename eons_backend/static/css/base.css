@@ -76,10 +76,6 @@ body {
   height: calc(1.5em + 1rem + 2px);
 }
 
-/* .asteriskField {
-  display: none !important;
-} */
-
 
 /* Footer styles */
 
@@ -91,6 +87,12 @@ footer {
   background-color: var(--transparent2)
 }
 
+/* Account Settings page styles */
+
+#account-page-header {
+  font-size: 24px;
+  color: var(--eonsyellow);
+}
 
 /* Animation placeholder */
 

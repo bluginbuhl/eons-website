@@ -1,12 +1,16 @@
 {% extends '_base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block title %}Logout{% endblock title %}
 
 {% block content %}
+
+  <canvas id="cnv"></canvas>
+
   <div class="row">
   <div class="col"></div>
-    <div class="col col-md-6">
+    <div class="col col-md-3">
       <div class="card">
         <div class="card-body text-center">
           <h4>Are you sure you want to log out?</h4>
@@ -16,7 +20,7 @@
             {{ form|crispy }}
             <div class="mt-5 row">
               <div class="col"></div>
-              <div class="col-md-8">
+              <div class="col-md-10">
                 <button class="btn btn-lg btn-block btn-primary" type="submit">Log Out</button>
                 <button class="btn btn-lg btn-block btn-secondary" onclick="goBack()">Cancel</button>
               </div>
@@ -34,4 +38,5 @@
       window.history.back();
     }
   </script>
+  <script src="{% static 'js/dots.js' %}"></script>
 {% endblock content %}

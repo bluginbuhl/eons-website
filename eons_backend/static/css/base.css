@@ -40,14 +40,14 @@ body {
 
 .nav-link:hover {
   color: var(--eonsbrightteal);
-  text-decoration: underline;
 }
 
 .account-link {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Roboto', sans-serif;
 }
 
 .account-link:hover {
+  color: white !important;
   text-decoration: none !important;
 }
 
@@ -75,6 +75,10 @@ body {
   border-radius: 0px;
   height: calc(1.5em + 1rem + 2px);
 }
+
+/* .asteriskField {
+  display: none !important;
+} */
 
 
 /* Footer styles */

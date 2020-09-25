@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -47,15 +48,15 @@
                   <div><small><strong class="ml-2">{{ user.email }}</strong></small></div>
                   <div class="dropdown-divider"></div>
                   {% if user.is_staff %}
-                    <a class="nav-link text-dark" href="{% url 'admin:index' %}">Admin dashboard</a>
+                    <a class="nav-link" href="{% url 'admin:index' %}">Admin dashboard</a>
                     <div class="dropdown-divider"></div>
                   {% endif %}
-                  <a class="nav-link nav-item pl-2 text-dark" href="{% url 'account_logout' %}">Log out</a>
+                  <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
                 </div>
             </li>
           {% else %}
             <a href="{% url 'account_login' %}" class="nav-item nav-link">Log In</a>
-            <a href="{% url 'account_signup' %}" class="av-item nav-link">Register</a>
+            <a href="{% url 'account_signup' %}" class="nav-item nav-link">Register</a>
           {% endif %}
         </div>
       </div>

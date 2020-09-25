@@ -7,6 +7,7 @@
   --transparent1: rgba(0, 0, 0, 0.1);
   --transparent2: rgba(0, 0, 0, 0.2);
   --transparent5: rgba(0, 0, 0, 0.5);
+  --white: #ffffff;
 }
 
 body {
@@ -74,8 +75,8 @@ canvas {
 }
 
 #comingSoon h2 {
-  font-size: 5rem;
-  color: var(--eonsyellow);
+  font-size: 3rem;
+  color: var(--white);
   text-transform: uppercase;
   font-family: 'IBM Plex Mono', monospace;
   text-shadow: 0 0 5px #fff;

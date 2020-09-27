@@ -12,7 +12,7 @@
 }
 
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Custom text colors */
@@ -26,6 +26,11 @@ body {
 
 #brandLogo {
   height: 30px;
+}
+
+header {
+  position: relative;
+  height: 5vh;
 }
 
 .navbar {
@@ -68,6 +73,10 @@ body {
   padding-top: 5rem;
 }
 
+#mainBlock {
+  min-height: 83vh;
+}
+
 
 /* Form styles */
 
@@ -81,6 +90,9 @@ body {
 
 footer {
   color: var(--fg2);
+  height: 5vh;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-copyright {
@@ -98,9 +110,8 @@ footer {
 
 canvas {
   position: absolute;
-  top: -5rem;
-  width: 100vw;
-  height: 110vh;
+  height: 100%;
+  background-attachment: fixed;
 }
 
 #comingSoon {

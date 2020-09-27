@@ -29,8 +29,7 @@ body {
 }
 
 header {
-  position: relative;
-  height: 5vh;
+  z-index: 1;
 }
 
 .navbar {
@@ -56,6 +55,10 @@ header {
   text-decoration: none !important;
 }
 
+.dropdown-menu {
+  border-radius: 0px;
+}
+
 .dropdown .nav-link {
   font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
@@ -66,6 +69,12 @@ header {
   color: var(--eonsteal) !important;
 }
 
+
+/* Alert styles */
+
+.alert {
+  border-radius: 0px;
+}
 
 /* Content block */
 
@@ -90,8 +99,6 @@ header {
 
 footer {
   color: var(--fg2);
-  height: 5vh;
-  position: relative;
   z-index: 1;
 }
 
@@ -110,7 +117,7 @@ footer {
 
 canvas {
   position: absolute;
-  height: 100%;
+  min-height: 100%;
   background-attachment: fixed;
 }
 

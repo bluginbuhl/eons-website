@@ -27,7 +27,7 @@
 
 </head>
 <body class="d-flex flex-column">
-  <header class="mb-3">
+  <header class="mb-auto masthead">
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
@@ -70,10 +70,25 @@
     </nav>
   </header>
 
-  {% comment %} <canvas id="cnv"></canvas> {% endcomment %}
+  <canvas id="cnv"></canvas>
 
-  <main>
+  <main class="mb-3">
     <div id="mainBlock" class="container-fluid">
+      <div class="row justify-content-center text-center my-2">
+        {% if messages %}
+          <div class="col-md-4">
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }} alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                  <span aria-hidden="true">×</span>
+                </button>
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
       <div class="row justify-content-center text-center">
         {% block content %}
         {% endblock content %}
@@ -81,9 +96,7 @@
     </div>
   </main>
 
-
-
-  <footer class="footer mt-3">
+  <footer class="mastfoot footer mt-auto">
     <div class="footer-content">
       <div class="footer-copyright text-center py-3">
         © 2020 Copyright: 

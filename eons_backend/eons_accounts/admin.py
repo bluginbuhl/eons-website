@@ -29,3 +29,4 @@ admin.site.register(EonsUser, EonsUserAdmin)
 
 admin.site.site_title = "EONS - Admin"
 admin.site.site_header = "EONS Administration"
+admin.site.index_title = "EONS Project Administration"

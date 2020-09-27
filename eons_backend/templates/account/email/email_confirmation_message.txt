@@ -5,7 +5,7 @@
 {% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
 Hello from EONS!
 
-You're receiving this email because user {{ user_display }} has given yours as an email address to connect their account.
+You're receiving this email because this address has been used to connect to an EONS account.
 
 To confirm this is correct, please go to {{ activate_url }}
 

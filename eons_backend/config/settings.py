@@ -192,3 +192,12 @@ ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = False
 
 ACCOUNT_SESSION_REMEMBER = True
+
+# Django REST Framework
+# https://www.django-rest-framework.org/#
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}

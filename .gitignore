@@ -88,3 +88,6 @@ venv.bak/
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Specific files from scratchwork
+sample_site.json

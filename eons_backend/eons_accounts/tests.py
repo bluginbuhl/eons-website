@@ -63,5 +63,6 @@ class RegisterTests(TestCase):
             self.password,
             )
 
-        self.assertEqual(get_user_model().objects.all().count(), 1)
-        self.assertEqual(get_user_model().objects.all()[0].email, self.email)
+        # AnonymousUser is created automatically by django-guardian, so there are 2 users in the database
+        self.assertEqual(get_user_model().objects.all().count(), 2)
+        self.assertEqual(get_user_model().objects.all()[1].email, self.email)

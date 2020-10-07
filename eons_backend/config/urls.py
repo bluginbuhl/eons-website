@@ -24,5 +24,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
 
     # Local apps
-    path('', include('pages.urls'))
+    path('', include('pages.urls')),
+    path('api/v1/', include('eons_data.urls')),
 ]

@@ -24,7 +24,7 @@ Build the Docker containers in `eons_backend`.
 $ cd eons_backend && docker-compose up --build
 ```
 
-The containers will be build and the packages from `Pipfile` will be installed into the `web` container. The database is Postgresql.
+The containers will be built and the packages from `Pipfile` will be installed into the `web` container. The database is Postgresql.
 
 Once the containers are finished building, you should be able to see the site at [http://localhost:8000/](http://localhost:8000/).
 

@@ -54,7 +54,7 @@
                   <div><small><strong class="ml-2 yellow">{{ user.email }}</strong></small></div>
                   <div class="dropdown-divider"></div>
                   {% if user.is_staff %}
-                    <a class="nav-link" href="{% url 'admin:index' %}">Admin dashboard</a>
+                    <a class="nav-link" href="{% url 'admin:index' %}"><span class="teal" id="admin-link">Admin dashboard</span></a>
                     <div class="dropdown-divider"></div>
                   {% endif %}
                   <a class="nav-link" href="{% url 'account_email' %}">Account settings</a>

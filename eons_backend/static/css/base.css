@@ -21,6 +21,10 @@ body {
   color: var(--eonsyellow);
 }
 
+.teal {
+  color: var(--eonsteal) !important;
+}
+
 
 /* Navbar styles */
 
@@ -67,6 +71,10 @@ header {
 .dropdown .nav-link:hover {
   text-decoration: none !important;
   color: var(--eonsteal) !important;
+}
+
+.dropdown #admin-link:hover {
+  color: var(--eonsyellow) !important;
 }
 
 

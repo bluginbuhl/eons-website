@@ -82,8 +82,7 @@ venv.bak/
 .mypy_cache/ 
 
 # Visual Studio Code # 
-.vscode/* 
-!.vscode/settings.json 
+eons_backend/.vscode/* 
 !.vscode/tasks.json 
 !.vscode/launch.json 
 !.vscode/extensions.json 

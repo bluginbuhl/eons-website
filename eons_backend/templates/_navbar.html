@@ -1,0 +1,44 @@
+{% load static %}
+
+<header class="mb-auto masthead">
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <div class="media">
+        <a href="{% url 'home' %}" class="navbar-brand mr-5">
+          <img src="{% static 'images/branding/eons_brand_header_light.png' %}" id="brandLogo" alt="EONS">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+          aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
+        <a class="nav-item nav-link" href="#">About</a>
+        <a class="nav-item nav-link" href="#">Data</a>
+      </div>
+      <div class="navbar-nav">
+        {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle account-link" id="navbarDropdown" role="button" data-toggle="dropdown" href="#">{{ user.email }}</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:250px">
+                <span class="nav-item ml-2">Signed in as</span>
+                <div><small><strong class="ml-2 yellow">{{ user.email }}</strong></small></div>
+                <div class="dropdown-divider"></div>
+                {% if user.is_staff %}
+                  <a class="nav-link red" href="{% url 'admin:index' %}">Admin dashboard</a>
+                  <div class="dropdown-divider"></div>
+                {% endif %}
+                <a class="nav-link" href="{% url 'account_email' %}">Account settings</a>
+                <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
+              </div>
+          </li>
+        {% else %}
+          <a href="{% url 'account_login' %}" class="nav-item nav-link mr-3">Log In</a>
+          <a href="{% url 'account_signup' %}" class="btn btn-outline-success nav-item nav-link">Sign Up</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</header> 

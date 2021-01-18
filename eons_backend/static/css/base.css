@@ -4,6 +4,7 @@
   --eonsbrightteal: #00f0f0;
   --eonsgrey: #cbd5db;
   --eonsyellow: #fabd2f;
+  --eonsred: #cc241d;
   --fg2: #d5c4a1;
   --transparent1: rgba(0, 0, 0, 0.1);
   --transparent2: rgba(0, 0, 0, 0.2);
@@ -21,8 +22,8 @@ body {
   color: var(--eonsyellow);
 }
 
-.teal {
-  color: var(--eonsteal) !important;
+.red {
+  color: var(--eonsred) !important;
 }
 
 
@@ -125,7 +126,7 @@ footer {
 
 canvas {
   position: absolute;
-  min-height: 100%;
+  /* min-height: 100%; */
   background-attachment: fixed;
 }
 
@@ -139,4 +140,12 @@ canvas {
   text-transform: uppercase;
   font-family: 'IBM Plex Mono', monospace;
   text-shadow: 0 0 5px #fff;
+}
+
+.pusher {
+  /* min-height: 100% !important; */
+}
+
+main {
+  /* min-height: 100%; */
 }

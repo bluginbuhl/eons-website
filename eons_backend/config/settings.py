@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'guardian',
     'rest_framework',
+    'django_extensions',
 
     # Local apps
     'eons_accounts',

@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/ben/.local/share/virtualenvs/eons_backend-AMh9NQBG/bin/python3.8",
+    "python.pythonPath": "/home/ben/.local/share/virtualenvs/eons_backend-AMh9NQBG/bin/python",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     "liveServer.settings.port": 5501

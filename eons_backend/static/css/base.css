@@ -13,7 +13,7 @@
 }
 
 body {
-  /* overflow: hidden; */
+  overflow: scroll;
 }
 
 /* Custom text colors */
@@ -24,58 +24,6 @@ body {
 
 .red {
   color: var(--eonsred) !important;
-}
-
-
-/* Navbar styles */
-
-#brandLogo {
-  height: 30px;
-}
-
-header {
-  z-index: 1;
-}
-
-.navbar {
-  background-color: var(--transparent5) !important;
-}
-
-.nav-link {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1rem;
-  color: var(--eonsgrey);
-}
-
-.nav-link:hover {
-  color: var(--eonsbrightteal);
-}
-
-.account-link {
-  font-family: 'Roboto', sans-serif;
-}
-
-.account-link:hover {
-  color: white !important;
-  text-decoration: none !important;
-}
-
-.dropdown-menu {
-  border-radius: 0px;
-}
-
-.dropdown .nav-link {
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.8rem;
-}
-
-.dropdown .nav-link:hover {
-  text-decoration: none !important;
-  color: var(--eonsteal) !important;
-}
-
-.dropdown #admin-link:hover {
-  color: var(--eonsyellow) !important;
 }
 
 
@@ -92,7 +40,7 @@ header {
 }
 
 #mainBlock {
-  min-height: 83vh;
+  min-height: 80vh;
 }
 
 
@@ -140,12 +88,4 @@ canvas {
   text-transform: uppercase;
   font-family: 'IBM Plex Mono', monospace;
   text-shadow: 0 0 5px #fff;
-}
-
-.pusher {
-  /* min-height: 100% !important; */
-}
-
-main {
-  /* min-height: 100%; */
 }

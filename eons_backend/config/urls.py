@@ -26,4 +26,5 @@ urlpatterns = [
     # Local apps
     path('', include('pages.urls')),
     path('api/v1/', include('eons_data.urls')),
+    path('data/', include('eons_data.urls')),
 ]

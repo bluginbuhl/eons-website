@@ -13,6 +13,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 
   <!-- Custom Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap" rel="stylesheet">
@@ -29,7 +30,7 @@
 
 <body class="d-flex flex-column">
 
-  {% include '_navbar.html' %}
+  {% include 'navbar.html' %}
 
   <canvas id="cnv"></canvas>
 

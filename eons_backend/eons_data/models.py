@@ -68,20 +68,25 @@ class EonsCsv(models.Model):
         return f"{self.file_name.name.split('/')[-1]}"
 
 class EonsBaseData(models.Model):
-    site_code = models.ForeignKey(EonsSite, on_delete=models.PROTECT)
+    site = models.ForeignKey(EonsSite, on_delete=models.PROTECT)
     utc_datetime = models.DateTimeField()
     local_datetime = models.DateTimeField(null=True)
-    temperature = models.FloatField()
-    battery_voltage = models.FloatField()
+    temperature = models.DecimalField(max_digits=4, decimal_places=1)
+    battery_voltage = models.DecimalField(max_digits=4, decimal_places=2)
     surf_brightness = models.FloatField()
     init_subs = models.FloatField()
-    moon_phase_deg = models.FloatField()
-    moon_elev_def = models.FloatField()
-    moon_illum_percent = models.FloatField()
+    sky_counts = models.IntegerField(null=True)
+    sky_brightness_discard = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+    sky_led_counts = models.IntegerField(null=True)
+    moon_phase_deg = models.DecimalField(max_digits=6, decimal_places=1)
+    moon_elev_deg = models.DecimalField(max_digits=6, decimal_places=3, default=0.00)
+    moon_illum_percent = models.DecimalField(max_digits=4, decimal_places=1)
 
     class Meta:
         verbose_name = "EONS Datum"
         verbose_name_plural = "EONS Data"
+
+        unique_together = [['site', 'utc_datetime']]
 
     def __str__(self):
         return f"{self.utc_datetime}"

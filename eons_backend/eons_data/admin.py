@@ -41,7 +41,7 @@ class EonsBaseDataAdminForm(forms.ModelForm):
 
 class EonsBaseDataAdmin(GuardedModelAdmin):
     list_display = (
-        'site_code',
+        'site',
         'utc_datetime'
     )
 

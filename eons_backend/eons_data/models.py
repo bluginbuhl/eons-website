@@ -61,6 +61,9 @@ class EonsCsv(models.Model):
             print(f'Error: {e}')
         self.activated = flag
 
+    # def get_success_url(self):
+    #     return reverse('home')
+
     def __str__(self):
         return f"{self.file_name.name.split('/')[-1]}"
 

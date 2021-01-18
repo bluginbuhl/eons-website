@@ -25,6 +25,7 @@ djangorestframework = "~=3.12.1"
 django-extensions = "*"
 jupyter = "*"
 jupyterlab = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.8"

@@ -2,5 +2,9 @@
     "python.pythonPath": "/home/ben/.local/share/virtualenvs/eons_backend-AMh9NQBG/bin/python",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "python.disableInstallationCheck": true,
+    "python.analysis.logLevel": "Information",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.venvPath": "~/.virtualenvs"
 }

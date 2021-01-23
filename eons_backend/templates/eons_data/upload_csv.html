@@ -11,27 +11,27 @@
       <div class="card-body">
         <h4 class="card-title">Upload new EONS data</h4>
         <hr>
-        {% if sites %}
+        {% if stations %}
           <form action="{% url 'upload_csv' %}" enctype="multipart/form-data" method="POST" class="mt-3 text-left">
             {% csrf_token %}
-            <small><label for="site_choice">Choose an EONS Site to upload data for:</label></small>
+            <small><label for="site_choice">Choose an EONS Station to upload data for:</label></small>
             <div class="mb-3">
-              <select class="form-control" name="site_choice" id="">
-                {% for site in sites %}
-                  <option value="{{ site.site_code }}">{{ site }}</option>
+              <select class="form-control" name="station_choice" id="">
+                {% for station in stations %}
+                  <option value="{{ station.station_code }}">{{ station }}</option>
                 {% endfor %}
               </select>
             </div>
             <div>
               <small><label for="file1">Choose file to upload:</label></small>
               <div class="mb-4">
-                <input class="form-control "type="file", id="file1", name="file1">
+                <input class="form-control" type="file", id="file1", name="file1">
               </div>
             </div>
             <button class="btn btn-lg btn-block btn-primary" type="submit">Upload</button>
           </form>
         {% else %}
-          <div>You don't have permission to upload data for any EONS sites.</div>
+          <div>You don't have permission to upload data for any EONS Stations.</div>
         {% endif %}
       </div>
     </div>

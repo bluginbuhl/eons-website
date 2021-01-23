@@ -1,15 +1,20 @@
 from rest_framework import serializers
 
-from .models import EonsSite, EonsCsv
+from .models import EonsStation, EonsCsv
 
 
-class EonsSiteSerializer(serializers.ModelSerializer):
+class EonsStationSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('site_code', 'name', 'date_added', 'latitude', 'longitude')
-        model = EonsSite
+        fields = ('station_code', 'name', 'date_added', 'latitude', 'longitude')
+        model = EonsStation
 
 
 class EonsCsvSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('site_code', 'file_name', 'uploaded_date', 'user')
+        fields = (
+            'station_code',
+            'file_name',
+            'uploaded_date',
+            'user',
+            )
         model = EonsCsv

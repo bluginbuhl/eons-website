@@ -30,8 +30,9 @@
             </div>
             <button class="btn btn-lg btn-block btn-primary" type="submit">Upload</button>
           </form>
+        {% else %}
+          <div>You don't have permission to upload data for any EONS sites.</div>
         {% endif %}
-        <div>You don't have permission to upload data for any EONS sites.</div>
       </div>
     </div>
   </div>

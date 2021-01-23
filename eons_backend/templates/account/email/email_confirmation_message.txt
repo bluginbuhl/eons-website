@@ -7,7 +7,7 @@ Hello from EONS!
 
 You're receiving this email because this address has been used to connect to an EONS account.
 
-To confirm this is correct, please go to {{ activate_url }}
+To confirm this is correct and to activate your account, please go to {{ activate_url }}
 
 {% endblocktrans %}
 {% endautoescape %}

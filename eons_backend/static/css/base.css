@@ -26,6 +26,10 @@ body {
   color: var(--eonsred) !important;
 }
 
+hr {
+  background-color: var(--eonsgrey);
+}
+
 
 /* Alert styles */
 

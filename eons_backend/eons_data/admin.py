@@ -2,18 +2,37 @@ from django.contrib import admin
 from guardian.admin import GuardedModelAdmin
 from django import forms
 
-from .models import EonsSite, EonsCsv, EonsBaseData
+from .models import EonsStation, EonsSensor, EonsCsv, EonsBaseData
 
 
-class EonsSiteAdmin(GuardedModelAdmin):
-    list_display = ('site_code', 'name', 'users_list')
+class EonsSensorInline(admin.TabularInline):
+    model = EonsSensor
+    max_num = 2
 
+@admin.register(EonsStation)
+class EonsStationAdmin(GuardedModelAdmin):
+    inlines = [
+        EonsSensorInline
+    ]
+    list_display = ('station_code', 'name', 'sensors', 'users')
+
+    def sensors(self, obj):
+        return obj.sensors_list()
+
+    def users(self, obj):
+        return obj.users_list()
+
+@admin.register(EonsSensor)
+class EonsSensorAdmin(GuardedModelAdmin):
+    list_display = ('sensor_id', 'station_code', 'is_snow_sensor')
+
+@admin.register(EonsCsv)
 class EonsCsvAdmin(GuardedModelAdmin):
     list_display = (
         'id', 
-        'activated',
+        'converted_to_raw_data',
         'get_filestring',
-        'site_code',
+        'station_code',
         'uploaded_date',
         'user'
         )
@@ -37,15 +56,11 @@ class EonsCsvAdmin(GuardedModelAdmin):
     get_filestring.short_description = "file name"
 
 class EonsBaseDataAdminForm(forms.ModelForm):
-    site_code = forms.CharField(widget=forms.TextInput(attrs={'size': 400}))
+    station = forms.CharField(widget=forms.TextInput(attrs={'size': 400}))
 
+@admin.register(EonsBaseData)
 class EonsBaseDataAdmin(GuardedModelAdmin):
     list_display = (
-        'site',
-        'utc_datetime'
+        'station',
+        'utc_datetime',
     )
-
-
-admin.site.register(EonsSite, EonsSiteAdmin)
-admin.site.register(EonsCsv, EonsCsvAdmin)
-admin.site.register(EonsBaseData, EonsBaseDataAdmin)

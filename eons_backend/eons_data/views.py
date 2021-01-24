@@ -42,44 +42,6 @@ class EonsCsvDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = EonsCsv.objects.all()
     serializer_class = EonsCsvSerializer
 
-# Upload CSV view
-# using function-based view for now
-# TODO: get class-based view to work
-# class UploadCsvView(CreateView):
-#     template_name = 'eons_data/upload_csv.html'
-#     form_class = EonsCsvForm
-#     sites = EonsSite.objects.all()
-
-#     # def get(self, request, *args, **kwargs):
-#     #     user = request.user
-#     #     perms = []
-#     #     for site in self.sites:
-#     #         perms.append(get_user_perms(user, site))
-#     #     form = self.form_class()
-#     #     return render(request, self.template_name, {
-#     #         'form': form,
-#     #         'req': request,
-#     #         'perms': perms,
-#     #     })
-
-#     # def post(self, request, *args, **kwargs):
-#     #     form = self.form_class(data=request.POST, files=request.FILES)
-#     #     if form.is_valid():
-#     #         print("valid form!")
-#     #         user = request.user
-#     #         form.save(user=user)
-#     #         return HttpResponse('/')
-#     #     print("form invalid!")
-#     #     return render(request, self.template_name, {
-#     #         'form': form
-#     #     })
-
-#     def form_valid(self, form):
-#         csv = form.save(commit=False)
-#         csv.user = get_user_model().objects.get(email=self.request.user)
-#         csv.save()
-#         return HttpResponseRedirect(reverse('home'))
-
 
 @login_required
 # @permission_required('eons_data.upload_data')
@@ -102,13 +64,11 @@ def upload_csv(request, methods=['GET', 'POST']):
         return render(request, template, context)
 
     csv_temp = request.FILES['file1']
-    # data_set = csv_file.read().decode('utf-8')
-    # io_string = io.StringIO(data_set)
 
     station_choice = request.POST['station_choice']
 
     eons_csv, _ = EonsCsv.objects.update_or_create(
-        station_code = EonsStation.objects.filter(site_code=site_choice).first(),
+        station_code = EonsStation.objects.filter(station_code=station_choice).first(),
         user=request.user,
         file_name = csv_temp,
     )
@@ -154,12 +114,12 @@ def upload_csv(request, methods=['GET', 'POST']):
     #             ))
     #     bulk_mgr.done()
 
-    eons_csv.set_activated(True)
+    # eons_csv.set_activated(True)
 
     context = {
         'title': "Upload Data",
         'data': data,
-        'sites': sites,
+        'stations': stations,
         'messages': None
     }
 

@@ -42,9 +42,10 @@ class EonsSensor(models.Model):
     station_code = models.ForeignKey(EonsStation, on_delete=models.PROTECT, related_name='sensors')
     is_snow_sensor = models.BooleanField(default=False)
 
+
     class Meta:
         ordering = ['station_code']
-        
+
         verbose_name = "EONS Sensor",
         verbose_name_plural = "EONS Sensors"
 
@@ -55,8 +56,9 @@ class EonsSensor(models.Model):
 def content_file_name(instance, filename):
     ext = filename.split('.')[-1]
     date = str(instance.uploaded_date).split('.')[0].replace('-', '')
-    station_code = str(instance.site_code).split('-')[0].strip()
-    new_name = f"eons_csvs/{station_code}/{date}_{site_code}.{ext}"
+    station_code = str(instance.station_code).split('-')[0].strip()
+    sensor_id = str(filename.split('_')[-1])
+    new_name = f"eons_csvs/{station_code}/{filename}"
     return new_name
 
 class EonsCsv(models.Model):
